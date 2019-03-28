@@ -1,0 +1,8 @@
+until $(curl -o /dev/null -s -I -f https://pure-basin-87634.herokuapp.com); do
+  sleep 5
+done
+
+for ROUTE in $WARMUP_ROUTES; do
+  echo "[warmup] calling $ROUTE"
+  curl -L "https://pure-basin-87634.herokuapp.com$ROUTE" >/dev/null 2>&1
+done
