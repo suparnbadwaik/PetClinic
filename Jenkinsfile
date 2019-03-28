@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage ('Checkout Code') {
+        stage ('Checkout Code from Git') {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/gouthamchilakala/PetClinic.git']]])
             }
