@@ -1,9 +1,9 @@
 echo "WARMUP STARTED"
-until $(curl -o /dev/null -s -I -f https://young-brushlands-87978.herokuapp.com); do
+until $(curl -o /dev/null -s -I -f https://gentle-ridge-80276.herokuapp.com); do
   sleep 5
 done
 
 for ROUTE in $WARMUP_ROUTES; do
   echo "[warmup] calling $ROUTE"
-  curl -L "https://young-brushlands-87978.herokuapp.com$ROUTE" >/dev/null 2>&1
+  curl -L "https://gentle-ridge-80276.herokuapp.com$ROUTE" >/dev/null 2>&1
 done
